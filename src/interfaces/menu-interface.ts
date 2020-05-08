@@ -3,4 +3,5 @@ export interface MenuItemInterface{
     title : string;
     imageUrl : string;
     size : string;
+    history? : any; 
 }
