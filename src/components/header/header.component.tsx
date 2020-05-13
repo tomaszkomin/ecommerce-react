@@ -5,10 +5,7 @@ import { ReactComponent as Logo } from './../../assets/logo.svg';
 
 import './header.styles.scss';
 
-class HeaderComponent extends React.Component<any,any>{
-    constructor(props: any){
-        super(props);
-    }   
+class HeaderComponent extends React.Component<any,any>{    
     render(){
         return (
             <div className="header">
@@ -17,9 +14,10 @@ class HeaderComponent extends React.Component<any,any>{
                 </Link>
                 <div className='options'>
                     <Link className='option' to="/shop">SHOP</Link>
-                    <Link className='option' to="/shop">CONTACT</Link>
+                    <Link className='option' to="/contact">CONTACT</Link>
                 </div>
-            </div>)
+            </div>
+        )
     } 
 }
 export default HeaderComponent;
