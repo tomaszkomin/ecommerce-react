@@ -3,6 +3,7 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import FormButton from './../form-button/form-button.component';
 
+import {signInWithGoogle} from './../../firebase/firebase.utils';
 import './sign-in.styles.scss';
 
 interface MyProps {};
@@ -16,6 +17,7 @@ class SignIn extends React.Component<MyProps, any>{
             password: '' 
         }
     }
+    
     public handleSubmit = (event: React.FormEvent<any>) => {
         event.preventDefault();
         this.setState({
@@ -30,7 +32,9 @@ class SignIn extends React.Component<MyProps, any>{
             [name]:value
         })
     }
+    
     render(){
+        console.log(this.props)
         return(
             <div className='sign-in'>
                 <h2>I already have account</h2>
@@ -40,7 +44,7 @@ class SignIn extends React.Component<MyProps, any>{
                     <FormInput
                         name="email"
                         type="email"
-                        label="type Email"
+                        label="Email"
                         value= {this.state.email}
                         handleChange= {this.handleChange}
                         required
@@ -49,13 +53,14 @@ class SignIn extends React.Component<MyProps, any>{
                         name="password"
                         type="password"
                         value= {this.state.password}
-                        label="type Label"
+                        label="Label"
                         handleChange= {this.handleChange}
                         required
                     />
-                    <FormButton type="submit" value="Login">LOGIN</FormButton>
-                    <FormButton type="submit" value="cancel">CANCEL</FormButton>
-                    {/* <input type="submit" value="Login" /> */}
+                    <div className="button">
+                        <FormButton type="submit" value="Login">LOGIN</FormButton>
+                        <FormButton onClick={signInWithGoogle} isGoogleSignIn>LOGIN WITH GMAIL </FormButton>
+                    </div>
                 </form>
             </div>
         )

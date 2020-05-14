@@ -1,5 +1,9 @@
 $background-color: black;
 $text-color: white;
+$google-blue : #4285f4;
+$google-blue-dark : #357ae8;
+
+
 @mixin transition{
     transition: all 0.2s ease-in-out;
 }
@@ -10,7 +14,7 @@ $text-color: white;
     border: 2px solid $background-color;
     padding: 1rem;
     margin: 0.5rem;
-    width: 30vh;
+    width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,4 +25,14 @@ $text-color: white;
         background-color: $text-color;
         color: $background-color;
     }
+    &.google-sign-in { 
+        background-color: $google-blue;
+        border: 2px solid $google-blue;
+        color: white;
+        &:hover {
+            background-color: darken($google-blue-dark,10);
+            border: 2px solid darken($google-blue-dark,10);
+        }
+    }
+   
 }
