@@ -3,7 +3,8 @@ import React from 'react';
 import './form-input.styles.scss';
 
 interface iProps {
-    handleChange: (event: any) => void,
+    handleChange?: (event: any) => void,
+    onChange?: (event: any) => void,
     label: string,
     value: any,
     name: string,

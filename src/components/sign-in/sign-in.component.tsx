@@ -34,7 +34,6 @@ class SignIn extends React.Component<MyProps, any>{
     }
     
     render(){
-        console.log(this.props)
         return(
             <div className='sign-in'>
                 <h2>I already have account</h2>
@@ -53,7 +52,7 @@ class SignIn extends React.Component<MyProps, any>{
                         name="password"
                         type="password"
                         value= {this.state.password}
-                        label="Label"
+                        label="password"
                         handleChange= {this.handleChange}
                         required
                     />
