@@ -3,7 +3,7 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import FormButton from './../form-button/form-button.component';
 
-import {signInWithGoogle} from './../../firebase/firebase.utils';
+import { auth, signInWithGoogle } from './../../firebase/firebase.utils';
 import './sign-in.styles.scss';
 
 interface MyProps {};
@@ -18,8 +18,18 @@ class SignIn extends React.Component<MyProps, any>{
         }
     }
     
-    public handleSubmit = (event: React.FormEvent<any>) => {
+    public handleSubmit = async (event: React.FormEvent<any>) => {
+        const { email, password }  = this.state;
         event.preventDefault();
+        try{
+            await auth.signInWithEmailAndPassword( email, password );
+            this.setState({
+                email: email,
+                password: password
+            })} 
+        catch(error){
+
+        }        
         this.setState({
             email: '',
             password: ''
@@ -28,6 +38,7 @@ class SignIn extends React.Component<MyProps, any>{
     // public handleChange = (event: React.FormEvent<any>) => {
     public handleChange = (event:any) => {
         const { value, name } = event.target;
+        
         this.setState({
             [name]:value
         })
@@ -58,7 +69,7 @@ class SignIn extends React.Component<MyProps, any>{
                     />
                     <div className="button">
                         <FormButton type="submit" value="Login">LOGIN</FormButton>
-                        <FormButton onClick={signInWithGoogle} isGoogleSignIn>LOGIN WITH GMAIL </FormButton>
+                        <FormButton type="button" onClick={signInWithGoogle} isGoogleSignIn>LOGIN WITH GMAIL </FormButton>
                     </div>
                 </form>
             </div>
