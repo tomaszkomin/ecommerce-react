@@ -30,7 +30,9 @@ class App extends React.Component{
           })            
         })
       }
-      setCurrentUser(userAuth)
+      else{
+        setCurrentUser(null)
+      }
     })
   }
   componentWillUnmount(){
@@ -46,23 +48,25 @@ class App extends React.Component{
             <Route 
               exact 
               path='/signIn'
-              render={() => 
-                this.props.currentUser ? (
-                    <Redirect to='/' />
-                  ) : (
-                    <SignInUp/>
-                  )
-              }/>
+              component={SignInUp}
+              // render={() => 
+              //   this.props.currentUser ? (
+              //       <Redirect to='/' />
+              //     ) : (
+              //       <SignInUp/>
+              //     )
+              // }
+              />
           </Switch>
       </div>
     );
   }  
 }
-// const mapStateToProps = (user) => ({
-//    currentUser: user.currentUser
-// })
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+})
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps , mapDispatchToProps)(App);
