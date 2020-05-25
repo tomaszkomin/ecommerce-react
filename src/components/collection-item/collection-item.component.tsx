@@ -18,7 +18,7 @@ const CollectionItem = ({item, addItem }:{item:iItem,addItem:any})=> {
                 <span className='name'>{name}</span>
                 <span className='price'>{price}</span>
             </div>
-            <FormButton onClick={addItem} inverted>
+            <FormButton onClick={() => addItem(item)} inverted>
                  ADD TO CART
             </FormButton>
         </div>
