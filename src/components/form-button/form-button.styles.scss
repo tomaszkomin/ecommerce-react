@@ -9,12 +9,14 @@ $google-blue-dark : #357ae8;
 }
 .form-button{
     @include transition();
+    display: flex;
+    justify-content: center;
     background-color: $background-color;
     color: $text-color;
     border: 2px solid $background-color;
     padding: 1rem;
     margin: 0.5rem;
-    width: 30vw;
+    width: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,10 +30,20 @@ $google-blue-dark : #357ae8;
     &.google-sign-in { 
         background-color: $google-blue;
         border: 2px solid $google-blue;
-        color: white;
+        color: $text-color;
         &:hover {
             background-color: darken($google-blue-dark,10);
             border: 2px solid darken($google-blue-dark,10);
+        }
+    }
+    &.inverted {
+        background-color: $text-color;
+        color: $background-color;
+        border: 1px solid $background-color;
+        &:hover{
+            background-color: $background-color;
+            color: $text-color;
+            border: 1px solid $background-color;
         }
     }
    
