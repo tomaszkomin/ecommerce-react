@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react';
 import { connect } from 'react-redux';
-
 import { toogleCartHidden } from './../../redux/cart/cart.actions';
+import { selectCartItemsQuantity } from './../../redux/cart/cart.selectors'
 
 import {ReactComponent as ShoppingIcon} from './../../assets/shopping-icon.svg';
 import { iItem } from './../../interfaces/item-interface';
@@ -13,10 +13,8 @@ const CartIcon = ({toogleCartHidden, itemCount} : { toogleCartHidden: MouseEvent
         <span className='item-count'>{itemCount}</span>
     </div>
 );
-const mapStateToProps = ({cart: {cartItems}}:any) => ({ 
-    itemCount: cartItems.reduce((sumQuantity: number, cartItem: { quantity: number; }) :number =>
-        (sumQuantity + cartItem.quantity) 
-    ,0)
+const mapStateToProps = (state:any) => ({ 
+    itemCount : selectCartItemsQuantity(state)
 })
 const mapDispatchToProps = (dispatch: any) => ({
     toogleCartHidden: () => dispatch(toogleCartHidden())
