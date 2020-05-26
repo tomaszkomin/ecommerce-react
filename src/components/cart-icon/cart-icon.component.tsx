@@ -6,6 +6,7 @@ import { selectCartItemsQuantity } from './../../redux/cart/cart.selectors'
 import {ReactComponent as ShoppingIcon} from './../../assets/shopping-icon.svg';
 import { iItem } from './../../interfaces/item-interface';
 import './cart-icon.styles.scss';
+import { createStructuredSelector } from 'reselect';
 
 const CartIcon = ({toogleCartHidden, itemCount} : { toogleCartHidden: MouseEventHandler, itemCount:number}) => (
     <div className='cart-icon' onClick={toogleCartHidden}>
@@ -13,8 +14,8 @@ const CartIcon = ({toogleCartHidden, itemCount} : { toogleCartHidden: MouseEvent
         <span className='item-count'>{itemCount}</span>
     </div>
 );
-const mapStateToProps = (state:any) => ({ 
-    itemCount : selectCartItemsQuantity(state)
+const mapStateToProps = createStructuredSelector({ 
+    itemCount : selectCartItemsQuantity
 })
 const mapDispatchToProps = (dispatch: any) => ({
     toogleCartHidden: () => dispatch(toogleCartHidden())
