@@ -23,7 +23,7 @@ const CheckoutItem  = ( {cartItem, addItem, deleteItem, decreaseItem}:any ) => {
         </div>
     )
 }
-const mapDispatchToProps = (dispatch: (arg0: { type: string; payload: iItem; }) => any) => ({
+const mapDispatchToProps = (dispatch: any) => ({
     addItem : (item:iItem) => dispatch(addItem(item)),
     deleteItem: (item:iItem) => dispatch(deleteItem(item)),
     decreaseItem : (item:iItem) => dispatch(decreaseItem(item)),

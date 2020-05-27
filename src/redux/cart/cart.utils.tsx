@@ -1,6 +1,7 @@
 import {iItem} from './../../interfaces/item-interface';
 import CartItem from '../../components/cart-item/cat-item.component';
-export const addItemToCart = (cartItems: iItem[],cartItemToAdd: { id: any; }) => {
+export const addItemToCart = (cartItems: iItem[],cartItemToAdd:iItem) => {
+    console.log(cartItemToAdd.id);
     const existingCartItem = cartItems.find(
         cartItem => cartItem.id === cartItemToAdd.id
     );
@@ -15,18 +16,18 @@ export const addItemToCart = (cartItems: iItem[],cartItemToAdd: { id: any; }) =>
         return [...cartItems, {...cartItemToAdd, quantity:1}]
     }
 }
-export const decreaseItem  = (cartItems: iItem[], cartItemToDecrease: { id: any; }) => {
+export const decreaseItem  = (cartItems: iItem[], cartItemToDecrease:iItem) => {
     const existingCartItem = cartItems.find((cartItem) => (
-        cartItem.id = cartItemToDecrease.id
-    ))
+        cartItem.id === cartItemToDecrease.id
+    ))      
     if( existingCartItem?.quantity === 1 ){
         //keep items from cart, remove item to decrease if quantity is 1
         return cartItems.filter(CartItem => CartItem.id !== cartItemToDecrease.id)
     }
     return cartItems.map( 
         cartItem => cartItem.id === cartItemToDecrease.id ? 
-        { ...cartItem , quantity: cartItem.quantity -1  }
-        :
-        cartItem
-    )
+            { ...cartItem , quantity: cartItem.quantity -1  }
+            :
+            cartItem
+    )   
 }
