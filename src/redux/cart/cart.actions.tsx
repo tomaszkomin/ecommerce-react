@@ -5,9 +5,16 @@ export const toogleCartHidden = () => ({
     type: CartActionTypes.TOOGLE_CART_HIDDEN
 })
 export const addItem = (item:iItem) => {
-    console.log(item);
     return {
         type: CartActionTypes.ADD_ITEM,
         payload: item
     }
 };
+export const deleteItem = (item:iItem) => ({
+    type : CartActionTypes.DELETE_ITEM,
+    payload: item
+})
+export const decreaseItem = (item:iItem) => ({
+    type : CartActionTypes.DECREASE_ITEM,
+    payload: item
+})

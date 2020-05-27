@@ -2,7 +2,7 @@ import React from 'react';
 import FormButton from './../form-button/form-button.component'
 
 import { connect } from 'react-redux';
-import { addItem } from './../../redux/cart/cart.actions';
+import { addItem, deleteItem } from './../../redux/cart/cart.actions';
 import { iItem } from './../../interfaces/item-interface'
 import './collection-item.stye.scss';
 

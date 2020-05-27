@@ -1,7 +1,7 @@
 import CartActionTypes from './cart.types';
 import { iItem } from './../../interfaces/item-interface';
-import { addItemToCart } from './cart.utils';
-const INITIAL_STATE = {
+import { addItemToCart, decreaseItem } from './cart.utils';
+const INITIAL_STATE:any = {
     hidden: true,
     cartItems: []
 }
@@ -17,6 +17,16 @@ const cartReducer = (state = INITIAL_STATE, action:any) => {
                 ...state,
                 hidden: !state.hidden
             };
+        case CartActionTypes.DELETE_ITEM:
+            return{
+                ...state,
+                cartItems: state.cartItems.filter((cartItem:any) => cartItem.id !== action.payload.id)
+            }
+        case CartActionTypes.DECREASE_ITEM:
+            return{
+                ...state,
+                cartItems: decreaseItem( state.cartItems, action.payload)
+            }
         default: 
             return  state;
     }
