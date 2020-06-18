@@ -1,4 +1,4 @@
-import { iItem } from './../../interfaces/item-interface';
+
 import React from 'react';
 import './cart-item.component.scss';
 

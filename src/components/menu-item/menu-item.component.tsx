@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import "./menu-item.styles.scss"
-import { MenuItemInterface } from './../../interfaces/menu-interface';
 
 const MenuItem = ( {id, title, imageUrl, size, history, linkUrl, match}: any) => (    
     <div className={`${size} menu-item `} onClick={()=>history.push( `${match.url}${linkUrl}`)}>

@@ -1,5 +1,4 @@
 import {iItem} from './../../interfaces/item-interface';
-import CartItem from '../../components/cart-item/cat-item.component';
 export const addItemToCart = (cartItems: iItem[],cartItemToAdd:iItem) => {
     console.log(cartItemToAdd.id);
     const existingCartItem = cartItems.find(

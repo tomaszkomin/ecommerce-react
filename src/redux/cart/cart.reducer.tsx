@@ -1,5 +1,4 @@
 import CartActionTypes from './cart.types';
-import { iItem } from './../../interfaces/item-interface';
 import { addItemToCart, decreaseItem } from './cart.utils';
 const INITIAL_STATE:any = {
     hidden: true,
