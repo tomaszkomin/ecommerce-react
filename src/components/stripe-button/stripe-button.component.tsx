@@ -5,7 +5,6 @@ const StripeCheckoutButton = ({price}:any) => {
     const priceForStripe = price * 100;
     const apiKey = 'pk_test_KoFzBhOBOippGoHUcfBSeiTQ001KbAEn8W';
     const onToken = (token: any) => {
-        console.log(token);
         alert('Payment was made test')
     }
     return (
@@ -15,7 +14,7 @@ const StripeCheckoutButton = ({price}:any) => {
             billingAddress
             shippingAddress
             image='https://svgshare.com/i/CUz.svg'
-            description={`Total is :${price}`}
+            description={`Total is: ${price}`}
             amount={priceForStripe}
             panelLabel='Panel Label'
             token={onToken}

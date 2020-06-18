@@ -4,7 +4,6 @@ import { toogleCartHidden } from './../../redux/cart/cart.actions';
 import { selectCartItemsQuantity } from './../../redux/cart/cart.selectors'
 
 import {ReactComponent as ShoppingIcon} from './../../assets/shopping-icon.svg';
-import { iItem } from './../../interfaces/item-interface';
 import './cart-icon.styles.scss';
 import { createStructuredSelector } from 'reselect';
 

@@ -12,4 +12,4 @@ const MenuItem = ( {id, title, imageUrl, size, history, linkUrl, match}: any) =>
         </div>
     </div>    
 );
-export default withRouter(MenuItem);
+export default withRouter(MenuItem); 
