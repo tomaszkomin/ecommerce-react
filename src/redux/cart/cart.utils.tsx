@@ -1,6 +1,5 @@
 import {iItem} from './../../interfaces/item-interface';
 export const addItemToCart = (cartItems: iItem[],cartItemToAdd:iItem) => {
-    console.log(cartItemToAdd.id);
     const existingCartItem = cartItems.find(
         cartItem => cartItem.id === cartItemToAdd.id
     );

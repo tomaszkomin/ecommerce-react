@@ -17,8 +17,8 @@ const CartDropdown = ({cartItems, history , dispatch }:any) => { return (
             <CustomButton onClick={()=> {
                     dispatch(toogleCartHidden())
                     history.push('/checkout');                    
-                }}
-            >GO TO CHECKOUT
+            }}>
+            GO TO CHECKOUT
             </CustomButton>
         {
             cartItems.length ?

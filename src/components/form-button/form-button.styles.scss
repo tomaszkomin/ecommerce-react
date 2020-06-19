@@ -8,43 +8,5 @@ $google-blue-dark : #357ae8;
     transition: all 0.2s ease-in-out;
 }
 .form-button{
-    @include transition();
-    display: flex;
-    justify-content: center;
-    background-color: $background-color;
-    color: $text-color;
-    border: 2px solid $background-color;
-    padding: 1rem;
-    margin: 0.5rem;
-    width: 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;    
-
-    &:hover{
-        @include transition();
-        background-color: $text-color;
-        color: $background-color;
-    }
-    &.google-sign-in { 
-        background-color: $google-blue;
-        border: 2px solid $google-blue;
-        color: $text-color;
-        &:hover {
-            background-color: darken($google-blue-dark,10);
-            border: 2px solid darken($google-blue-dark,10);
-        }
-    }
-    &.inverted {
-        background-color: $text-color;
-        color: $background-color;
-        border: 1px solid $background-color;
-        &:hover{
-            background-color: $background-color;
-            color: $text-color;
-            border: 1px solid $background-color;
-        }
-    }
-   
+    
 }

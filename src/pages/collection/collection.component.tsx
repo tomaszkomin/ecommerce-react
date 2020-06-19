@@ -8,8 +8,6 @@ import { selectCollection } from '../../redux/shop/shop.selectors'
 
 const CollectionPage = ({collection} : any) => {
     const { title, items } = collection
-    console.log("COLLECTION FILTRED ");
-    console.log(collection);
     return (
         <div className='collection-page'>
             <h2 className='title'>{title}</h2>

@@ -1,6 +1,8 @@
 import React from "react";
 
 import './form-button.styles.scss';
+import { FromButtonContainer } from './form-button.styles';
+
 interface iProps {
     onClick?: any,
     children?: string | any,
@@ -11,17 +13,11 @@ interface iProps {
     inverted?:boolean
 }
 
-const FormButton = ({ children, isGoogleSignIn, inverted, ...props}: iProps) => {
+const FormButton = ({children, ...props}:any) => {
     return( 
-        <button
-         className={`
-                ${isGoogleSignIn ? 'google-sign-in' : ''}
-                ${inverted ? 'inverted' : ''}
-                form-button`
-            } {...props}
-        >
+        <FromButtonContainer {...props}>
             {children}
-        </button>
+        </FromButtonContainer>
     )
 }
 export default FormButton;
