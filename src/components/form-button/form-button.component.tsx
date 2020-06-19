@@ -1,6 +1,4 @@
 import React from "react";
-
-import './form-button.styles.scss';
 import { FromButtonContainer } from './form-button.styles';
 
 interface iProps {
