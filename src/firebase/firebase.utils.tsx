@@ -31,6 +31,12 @@ export const createUserDocument = async (userAuth: any, additionalData: any) => 
     const userRef = firestore.doc(userQuery);
     const snapShot = await userRef.get();
 
+    const collectionRef = firestore.collection('users');
+    const collectionSnap = await collectionRef.get();
+    console.log("====================collectionSnap===============")
+    console.log(collectionSnap)
+    console.log({dupa: collectionSnap.docs.map(doc => doc.data())})
+
     if(!snapShot.exists){
         const {displayName, email} = userAuth
         const createdAt = new Date();

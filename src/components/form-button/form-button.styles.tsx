@@ -4,6 +4,7 @@ const buttonStyles = css`
     background-color: black;
     color: white;
     border: 2px solid black;
+    transition: all 0.2s ease-in-out;
     &:hover{        
         background-color: white;
         color: black;
